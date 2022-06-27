@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { movieApi } from "../../../api";
 import { mainStyle } from "../../../styles/globalStyle";
+import { Loading } from "../../Loading";
 
 const MainBanner = styled.section`
   height: 80vh;
@@ -54,7 +55,7 @@ export const Home = () => {
         } = await movieApi.upComming();
         setUpComming(upCommingData);
 
-        setLoading(false);
+        // setLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -69,7 +70,7 @@ export const Home = () => {
   return (
     <div>
       {loading ? (
-        "LOADING..."
+        <Loading />
       ) : (
         <>
           {playing && (
