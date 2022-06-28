@@ -4,6 +4,10 @@ import { movieNum } from "../../../constants/constant";
 import { Loading } from "../../Loading";
 import { MainBanner } from "./MainBanner";
 
+import "swiper/css";
+import { Container } from "../../Container";
+import { Movies } from "./Movies";
+
 export const Home = () => {
   const [playing, setPlaying] = useState();
   const [rated, setRated] = useState();
@@ -47,7 +51,18 @@ export const Home = () => {
       {loading ? (
         <Loading />
       ) : (
-        <>{playing && <MainBanner playData={playing[movieNum]} />}</>
+        <>
+          {playing && (
+            <>
+              <MainBanner playData={playing[movieNum]} />
+              <Container>
+                <Movies movieData={playing} title="현재 상영 영화" />
+                <Movies movieData={rated} title="인기 영화" />
+                <Movies movieData={upComming} title="개봉 예정 영화" />
+              </Container>
+            </>
+          )}
+        </>
       )}
     </div>
   );
