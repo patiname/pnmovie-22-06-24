@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mainStyle } from "../styles/globalStyle";
@@ -14,6 +15,8 @@ const SHeader = styled.div`
   top: 0;
   left: 0;
   z-index: 9;
+  background-color: ${(props) => props.bgColor};
+  transition: 0.5s;
   @media screen and (max-width: 500px) {
     padding: ${mainStyle.moPadding};
   }
@@ -46,8 +49,21 @@ const Menu = styled.li`
 `;
 
 export const Header = () => {
+  const [bg, setBg] = useState("transparent");
+
+  const handleScroll = () => {
+    const sct = window.pageYOffset;
+    if (sct > 500) {
+      setBg("#1d1d1d");
+    } else {
+      setBg("transparent");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
-    <SHeader>
+    <SHeader bgColor={bg}>
       <Logo>
         <Link to={"/"}>PNMOVIE</Link>
       </Logo>
