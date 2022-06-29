@@ -3,7 +3,6 @@ import { movieApi } from "../../../api";
 import { movieNum } from "../../../constants/constant";
 import { Loading } from "../../Loading";
 import { MainBanner } from "./MainBanner";
-
 import "swiper/css";
 import { Container } from "../../Container";
 import { Movies } from "./Movies";
