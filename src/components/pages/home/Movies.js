@@ -47,7 +47,11 @@ export const Movies = ({ movieData, title }) => {
             <Link to={`/detail/${play.id}`}>
               <MovieImg
                 style={{
-                  background: `url(${imgUrl}/${play.backdrop_path}) no-repeat center / cover`,
+                  background: `url(${
+                    play.backdrop_path
+                      ? `${imgUrl}/${play.backdrop_path}`
+                      : "https://tohoku365.com/desk/wp/wp-content/themes/dp-voyageur/img/post_thumbnail/noimage.png"
+                  }) no-repeat center / cover`,
                 }}
               />
               <MovieTitle>{play.title}</MovieTitle>
