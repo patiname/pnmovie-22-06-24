@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pnmovie-22-06-24/static/css/main.9bf80ff5.css",
+    "main.js": "/pnmovie-22-06-24/static/js/main.5b2c9bc7.js",
+    "index.html": "/pnmovie-22-06-24/index.html",
+    "main.9bf80ff5.css.map": "/pnmovie-22-06-24/static/css/main.9bf80ff5.css.map",
+    "main.5b2c9bc7.js.map": "/pnmovie-22-06-24/static/js/main.5b2c9bc7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9bf80ff5.css",
+    "static/js/main.5b2c9bc7.js"
+  ]
+}
